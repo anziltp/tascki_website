@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  --color-tascki-yellow: #ffc000;
+  --color-tascki-black: #000000;
+  --color-tascki-light: #F8F9FA;
+  --font-sans: 'Inter', sans-serif;
+}
+
+body {
+  @apply bg-white text-gray-900 font-sans antialiased overflow-x-hidden;
+}
+
+@utility glassmorphism {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(229, 231, 235, 0.5);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+@utility yellow-glow {
+  box-shadow: 0 0 30px rgba(255, 192, 0, 0.4);
+}
+
+.hover-card {
+  transition: all 0.3s ease;
+}
+.hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+@utility sheen-effect {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 80%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+  }
+  &:hover::after {
+    animation: sheen 1.5s infinite;
+  }
+}
+
+@keyframes sheen {
+  0% {
+    left: -150%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+@utility engine-rumble {
+  &:hover {
+    animation: rumble 0.15s linear infinite;
+  }
+}
+
+@keyframes rumble {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-1px) rotate(-0.3deg); }
+  75% { transform: translateY(1px) rotate(0.3deg); }
+}
+
+@utility headlight-glow {
+  animation: headlightPulse 1.5s infinite ease-in-out;
+}
+
+@keyframes headlightPulse {
+  0%, 100% { opacity: 0.25; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.15); }
+}
+
+@keyframes drive-left {
+  0% { left: 110%; }
+  100% { left: -20%; }
+}
+
+@keyframes drive-right {
+  0% { left: -20%; }
+  100% { left: 110%; }
+}
+
+@utility drive-left-anim {
+  animation: drive-left 14s linear infinite;
+}
+
+@utility drive-right-anim {
+  animation: drive-right 17s linear infinite;
+}
