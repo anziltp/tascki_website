@@ -37,24 +37,28 @@ const LiveTracking = () => {
             <div className="absolute inset-0 bg-tascki-yellow/5 rounded-[2.5rem] blur-[50px] pointer-events-none" />
             
             {/* Dashboard Box */}
-            <div className="bg-white rounded-[2.5rem] p-6 border border-gray-100 shadow-2xl relative overflow-hidden bg-gradient-to-br from-white via-white to-gray-50/50">
+            <div className="bg-white rounded-[2.5rem] p-6 border border-slate-200/60 shadow-2xl relative overflow-hidden bg-gradient-to-br from-white via-white to-slate-50/50">
               {/* Header Chevron pattern */}
               <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-tascki-yellow via-yellow-400 to-tascki-yellow" />
               
               {/* Driver Card */}
-              <div className="flex items-center gap-4 mb-8 relative z-10 border-b border-gray-100 pb-6">
-                <div className="relative">
-                  <img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?auto=format&fit=crop&q=80" alt="Driver" className="w-16 h-16 rounded-full border-4 border-tascki-yellow object-cover shadow-md" />
-                  <div className="absolute -bottom-1 -right-1 bg-green-500 text-white p-1 rounded-full border-2 border-white shadow-sm animate-pulse">
-                    <div className="w-1.5 h-1.5 rounded-full bg-white" />
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8 relative z-10 border-b border-slate-100 pb-6">
+                <div className="flex items-center gap-4">
+                  <div className="relative">
+                    <img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?auto=format&fit=crop&q=80" alt="Driver" className="w-16 h-16 rounded-full border-4 border-tascki-yellow object-cover shadow-md" />
+                    <div className="absolute -bottom-1 -right-1 bg-green-500 text-white p-1 rounded-full border-2 border-white shadow-sm animate-pulse">
+                      <div className="w-1.5 h-1.5 rounded-full bg-white" />
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-black text-gray-900 tracking-wide uppercase">Raj Kumar</h4>
+                    <p className="text-tascki-yellow font-extrabold text-[10px] tracking-wider font-mono">MH 12 AB 3456 • Auto Rickshaw</p>
                   </div>
                 </div>
-                <div>
-                  <h4 className="text-xl font-black text-gray-900 tracking-wide">Raj Kumar</h4>
-                  <p className="text-tascki-yellow font-extrabold text-sm tracking-wide">MH 12 AB 3456 • Auto Rickshaw</p>
-                </div>
-                <div className="ml-auto bg-green-50 text-green-700 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-wider flex items-center gap-1.5 border border-green-200">
-                  <span className="w-2 h-2 rounded-full bg-green-500 animate-ping shrink-0" /> Live Feed
+                <div className="w-full sm:w-auto flex justify-between sm:justify-start items-center sm:ml-auto">
+                  <div className="bg-green-50 text-green-700 px-3.5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-wider flex items-center gap-1.5 border border-green-200 font-mono">
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-ping shrink-0" /> Live Feed
+                  </div>
                 </div>
               </div>
 
@@ -62,14 +66,14 @@ const LiveTracking = () => {
               <div className="grid grid-cols-2 gap-4 relative z-10">
                 
                 {/* Simulated Live Speedometer */}
-                <div className="bg-gray-950 text-white rounded-3xl p-5 border border-white/5 shadow-md flex flex-col justify-between h-32 relative overflow-hidden group">
-                  <div className="flex items-center gap-2 text-gray-400 font-bold uppercase text-[10px] tracking-widest">
+                <div className="bg-slate-900 text-white rounded-3xl p-5 border border-white/5 shadow-lg flex flex-col justify-between h-32 relative overflow-hidden group">
+                  <div className="flex items-center gap-2 text-slate-400 font-extrabold uppercase text-[9px] tracking-widest font-mono">
                     <Gauge size={16} className="text-tascki-yellow stroke-[2.5]" /> 
                     <span>Live Speed</span>
                   </div>
-                  <div className="text-4xl font-black text-white font-mono flex items-baseline">
+                  <div className="text-3xl sm:text-4xl font-black text-white font-mono flex items-baseline">
                     <motion.span>{speed}</motion.span>
-                    <span className="text-xs text-gray-400 font-bold uppercase tracking-wider ml-1">km/h</span>
+                    <span className="text-xs text-slate-400 font-extrabold uppercase tracking-widest font-mono ml-1.5">km/h</span>
                   </div>
                   <div className="absolute -right-6 -bottom-6 text-white/5 transform rotate-12 pointer-events-none group-hover:text-white/10 transition-colors">
                     <Gauge size={80} />
@@ -77,14 +81,14 @@ const LiveTracking = () => {
                 </div>
                 
                 {/* Live ETA */}
-                <div className="bg-gray-50 rounded-3xl p-5 border border-gray-100 shadow-sm flex flex-col justify-between h-32 relative overflow-hidden group">
-                  <div className="flex items-center gap-2 text-gray-500 font-bold uppercase text-[10px] tracking-widest">
+                <div className="bg-slate-50 rounded-3xl p-5 border border-slate-200/50 shadow-md flex flex-col justify-between h-32 relative overflow-hidden group">
+                  <div className="flex items-center gap-2 text-slate-500 font-extrabold uppercase text-[9px] tracking-widest font-mono">
                     <Clock size={16} className="text-tascki-yellow stroke-[2.5]" /> 
                     <span>ETA Remaining</span>
                   </div>
-                  <div className="text-4xl font-black text-gray-900 font-mono flex items-baseline">
+                  <div className="text-3xl sm:text-4xl font-black text-slate-950 font-mono flex items-baseline">
                     <span>4</span>
-                    <span className="text-xs text-gray-400 font-bold uppercase tracking-wider ml-1">Min</span>
+                    <span className="text-xs text-slate-400 font-extrabold uppercase tracking-widest font-mono ml-1.5">Min</span>
                   </div>
                   <div className="absolute -right-6 -bottom-6 text-black/5 transform rotate-12 pointer-events-none group-hover:text-black/10 transition-colors">
                     <Clock size={80} />
@@ -92,17 +96,17 @@ const LiveTracking = () => {
                 </div>
                 
                 {/* Distance Progress */}
-                <div className="bg-gray-50 rounded-3xl p-5 border border-gray-100 col-span-2 flex flex-col justify-between shadow-sm relative overflow-hidden">
+                <div className="bg-slate-50 border border-slate-200/50 rounded-3xl p-5 col-span-2 flex flex-col justify-between shadow-md relative overflow-hidden">
                   <div className="flex justify-between items-center mb-2">
-                    <div className="flex items-center gap-2 text-gray-500 font-bold uppercase text-[10px] tracking-widest">
+                    <div className="flex items-center gap-2 text-slate-500 font-extrabold uppercase text-[9px] tracking-widest font-mono">
                       <MapPin size={16} className="text-tascki-yellow stroke-[2.5]" /> 
                       <span>Distance Left</span>
                     </div>
-                    <span className="text-xs font-bold text-gray-900">1.2 km</span>
+                    <span className="text-xs font-black text-slate-950 font-mono">1.2 km</span>
                   </div>
                   
                   {/* Progress Line */}
-                  <div className="w-full h-3.5 bg-gray-200 rounded-full overflow-hidden shadow-inner border border-gray-100 relative">
+                  <div className="w-full h-3.5 bg-slate-200 rounded-full overflow-hidden shadow-inner border border-slate-250/20 relative">
                     <motion.div 
                       initial={{ width: "20%" }}
                       animate={{ width: "80%" }}
@@ -129,7 +133,7 @@ const LiveTracking = () => {
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-yellow-100 text-yellow-700 text-xs font-black uppercase tracking-wider rounded-full">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-yellow-100 text-yellow-700 text-xs font-black uppercase tracking-wider rounded-full font-mono">
               GPS Telemetry
             </div>
             
@@ -148,7 +152,7 @@ const LiveTracking = () => {
                 { icon: ShieldCheck, text: 'Detailed driver license and background logs' },
                 { icon: Gauge, text: 'Live velocity and route mismatch triggers' }
               ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3 bg-gray-50 hover:bg-gray-100/70 p-4 rounded-2xl border border-gray-100 transition-colors">
+                <div key={i} className="flex items-center gap-3 bg-slate-50 hover:bg-slate-100/80 p-4 rounded-2xl border border-slate-200/40 transition-colors shadow-sm">
                   <div className="w-8 h-8 rounded-full bg-yellow-50 flex items-center justify-center shrink-0 border border-yellow-100">
                     <item.icon className="w-4 h-4 text-tascki-yellow stroke-[2.5]" />
                   </div>

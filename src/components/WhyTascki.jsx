@@ -15,13 +15,13 @@ const features = [
 
 const WhyTascki = () => {
   return (
-    <section id="business" className="py-24 relative bg-gray-50 border-t border-gray-100">
+    <section id="business" className="py-24 relative bg-gradient-to-b from-slate-50 to-white border-t border-slate-200/60">
       {/* Decorative safety stripe banner background */}
       <div className="absolute top-0 inset-x-0 h-2 bg-gradient-to-r from-tascki-yellow via-black to-tascki-yellow opacity-10 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-yellow-100 text-yellow-700 font-extrabold text-xs uppercase tracking-wider mb-4">
+          <div className="inline-block px-4 py-1.5 rounded-full bg-yellow-100 text-yellow-700 font-extrabold text-xs uppercase tracking-wider mb-4 font-mono">
             Our Promise
           </div>
           <h2 className="text-4xl md:text-5xl font-black mb-4 text-gray-900 tracking-tight">Why Choose <span className="text-tascki-yellow">TASCKI</span></h2>
@@ -39,17 +39,17 @@ const WhyTascki = () => {
               whileHover={{ 
                 scale: 1.04,
                 borderColor: 'rgba(255, 192, 0, 0.4)',
-                boxShadow: '0 10px 30px rgba(255,192,0,0.12)'
+                boxShadow: '0 12px 30px rgba(255,192,0,0.12)'
               }}
-              className="bg-white p-6 rounded-3xl border border-gray-100 shadow-md hover:-translate-y-2 cursor-pointer transition-all duration-300 group hover:engine-rumble"
+              className="bg-white p-6 rounded-[2rem] border border-slate-200/60 shadow-lg hover:-translate-y-2 cursor-pointer transition-all duration-300 group hover:engine-rumble"
             >
               {/* Animated Icon container */}
-              <div className="bg-gray-50 w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-tascki-yellow group-hover:text-black transition-colors duration-300 border border-gray-100">
-                <feature.icon className="text-tascki-yellow group-hover:text-black transition-colors duration-300 stroke-[2.5]" size={26} />
+              <div className="bg-slate-50 w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-tascki-yellow group-hover:text-slate-950 transition-colors duration-300 border border-slate-200/50 shadow-sm">
+                <feature.icon className="text-tascki-yellow group-hover:text-slate-950 transition-colors duration-300 stroke-[2.5]" size={26} />
               </div>
               
-              <h3 className="text-lg font-black text-gray-900 mb-2 uppercase tracking-wide">{feature.title}</h3>
-              <p className="text-xs text-gray-500 font-semibold leading-relaxed">{feature.desc}</p>
+              <h3 className="text-lg font-black text-slate-950 mb-2 uppercase tracking-wide leading-tight">{feature.title}</h3>
+              <p className="text-xs text-slate-500 font-semibold leading-relaxed">{feature.desc}</p>
             </motion.div>
           ))}
         </div>

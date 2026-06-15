@@ -5,10 +5,15 @@
   --color-tascki-black: #000000;
   --color-tascki-light: #F8F9FA;
   --font-sans: 'Inter', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
 }
 
 body {
   @apply bg-white text-gray-900 font-sans antialiased overflow-x-hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
 }
 
 @utility glassmorphism {

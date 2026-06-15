@@ -12,7 +12,7 @@ const DriverPartner = () => {
           
           <div className="grid md:grid-cols-2 gap-12 items-center relative z-10">
             {/* Left Column content */}
-            <div className="p-10 md:p-16 space-y-6">
+            <div className="p-6 sm:p-10 md:p-16 space-y-6">
               <div className="inline-block px-4 py-1.5 rounded-full bg-black/10 text-black font-extrabold text-xs uppercase tracking-wider">
                 Partner Program
               </div>
@@ -31,9 +31,9 @@ const DriverPartner = () => {
                   { icon: Banknote, text: 'Higher earnings & fast daily payouts' },
                   { icon: Headset, text: '24/7 dedicated driver help desk' },
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-4 text-black font-extrabold text-base">
-                    <div className="bg-white p-2 rounded-xl shadow-md border border-black/5">
-                      <item.icon size={20} className="text-tascki-yellow stroke-[2.5]" fill="#000" />
+                  <div key={i} className="flex items-center gap-4 text-slate-950 font-black text-base">
+                    <div className="bg-slate-900 p-2.5 rounded-xl shadow-md border border-slate-950/20">
+                      <item.icon size={18} className="text-tascki-yellow stroke-[2.5]" />
                     </div>
                     <span>{item.text}</span>
                   </div>
@@ -42,12 +42,12 @@ const DriverPartner = () => {
 
               <div className="pt-4">
                 <motion.button 
-                  whileHover={{ scale: 1.03, boxShadow: '0 10px 25px rgba(0,0,0,0.15)' }}
+                  whileHover={{ scale: 1.03, boxShadow: '0 12px 30px rgba(0,0,0,0.2)' }}
                   whileTap={{ scale: 0.97 }}
-                  className="bg-black text-tascki-yellow px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-wider flex items-center gap-2 cursor-pointer transition-all shadow-md"
+                  className="bg-slate-900 text-tascki-yellow px-8 py-4 rounded-2xl font-black text-xs uppercase tracking-widest flex items-center gap-2 cursor-pointer transition-all shadow-md font-mono"
                 >
                   <span>Become a Driver Today</span>
-                  <ArrowRight size={16} className="stroke-[3]" />
+                  <ArrowRight size={14} className="stroke-[3]" />
                 </motion.button>
               </div>
             </div>
@@ -68,6 +68,12 @@ const DriverPartner = () => {
                   className="w-full h-full object-cover rounded-l-[2rem] shadow-[-10px_0_30px_rgba(0,0,0,0.15)] border-l-4 border-black/10" 
                 />
                 
+                {/* Floating telemetry dashboard stat on the driver photo */}
+                <div className="absolute bottom-6 right-6 bg-slate-900/95 backdrop-blur-md px-4.5 py-3 rounded-2xl border border-white/10 text-white z-20 shadow-2xl pointer-events-none select-none">
+                  <span className="text-[8px] text-tascki-yellow font-extrabold uppercase tracking-widest block font-mono mb-0.5">Guaranteed Payouts</span>
+                  <span className="text-sm font-black tracking-wide uppercase">Earn up to ₹35,000/mo</span>
+                </div>
+
                 {/* Simulated pulsing headlights flashing toward the copy column */}
                 <div className="absolute top-[38%] left-[-35px] w-24 h-24 bg-tascki-yellow/40 rounded-full blur-xl headlight-glow pointer-events-none" />
                 <div className="absolute top-[52%] left-[-35px] w-24 h-24 bg-tascki-yellow/40 rounded-full blur-xl headlight-glow pointer-events-none" />

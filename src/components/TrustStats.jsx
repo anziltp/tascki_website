@@ -37,8 +37,8 @@ const SpeedometerDial = ({ percent }) => {
           cy="50"
           r="40"
           fill="none"
-          stroke="rgba(0,0,0,0.05)"
-          strokeWidth="9"
+          stroke="rgba(0,0,0,0.06)"
+          strokeWidth="8"
           strokeDasharray="125 250"
           strokeLinecap="round"
           transform="rotate(-180 50 50)"
@@ -49,7 +49,7 @@ const SpeedometerDial = ({ percent }) => {
           r="40"
           fill="none"
           stroke="#ffc000"
-          strokeWidth="9"
+          strokeWidth="8"
           strokeDasharray="125 250"
           strokeLinecap="round"
           transform="rotate(-180 50 50)"
@@ -60,18 +60,20 @@ const SpeedometerDial = ({ percent }) => {
         />
       </svg>
       
-      {/* Gauge Needle */}
+      {/* Gauge Needle with Glowing Amber Tip */}
       <motion.div
-        className="w-1.5 h-11 bg-black rounded-full origin-bottom absolute -bottom-1"
+        className="w-1.5 h-11 bg-slate-900 rounded-full origin-bottom absolute -bottom-1 flex flex-col items-center shadow-sm"
         initial={{ rotate: -90 }}
         whileInView={{ rotate: rotation }}
         viewport={{ once: true }}
         transition={{ duration: 1.8, ease: 'easeOut', delay: 0.2 }}
         style={{ transformOrigin: 'bottom center' }}
-      />
+      >
+        <div className="w-1 h-3.5 bg-tascki-yellow rounded-t-full shadow-[0_-2px_6px_rgba(255,192,0,0.8)]" />
+      </motion.div>
       
       {/* Center cap */}
-      <div className="w-4 h-4 bg-tascki-yellow border-2 border-black rounded-full absolute -bottom-2 z-10 shadow-sm" />
+      <div className="w-4 h-4 bg-tascki-yellow border-2 border-slate-900 rounded-full absolute -bottom-2 z-10 shadow-md" />
     </div>
   );
 };
@@ -85,12 +87,12 @@ const stats = [
 
 const TrustStats = () => {
   return (
-    <section className="py-20 relative overflow-hidden bg-gray-50 border-y border-gray-200">
+    <section className="py-20 relative overflow-hidden bg-gradient-to-b from-slate-50 to-white border-y border-slate-200/60">
       {/* Decorative tire tracks in the section background */}
-      <div className="absolute top-0 inset-x-0 h-4 bg-amber-400/10 opacity-30 select-none pointer-events-none" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '10px 10px' }} />
+      <div className="absolute top-0 inset-x-0 h-4 bg-amber-400/5 opacity-20 select-none pointer-events-none" style={{ backgroundImage: 'radial-gradient(#000 1.2px, transparent 1.2px)', backgroundSize: '12px 12px' }} />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -98,18 +100,18 @@ const TrustStats = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white p-6 rounded-3xl border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between text-center relative group overflow-hidden"
+              className="bg-white p-6 rounded-[2rem] border border-slate-200/60 shadow-lg shadow-slate-100/50 hover:shadow-2xl hover:shadow-tascki-yellow/10 hover:border-amber-400/40 transition-all duration-300 flex flex-col justify-between text-center relative group overflow-hidden"
             >
               {/* Dashboard dial visual */}
               <SpeedometerDial percent={stat.percent} />
 
               <div className="relative z-10 mt-2">
                 {/* Odometer ticking text style */}
-                <div className="text-4xl md:text-5xl font-black text-black tracking-tight mb-2 select-none font-mono">
+                <div className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-2 select-none font-mono">
                   <OdometerCounter value={stat.value} />
                 </div>
                 
-                <div className="text-gray-500 font-bold text-xs uppercase tracking-wider">
+                <div className="text-slate-500 font-extrabold text-[10px] uppercase tracking-widest font-mono">
                   {stat.label}
                 </div>
               </div>

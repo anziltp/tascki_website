@@ -34,7 +34,16 @@ const Footer = () => {
           
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <img src="/tascki logo.png" alt="TASCKI Logo" className="h-9 w-auto" onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }} />
+              <img 
+                src="/tascki%20logo.png" 
+                alt="TASCKI Logo" 
+                className="h-9 w-auto" 
+                onError={(e) => { 
+                  e.target.style.display = 'none'; 
+                  const h1 = e.target.parentNode?.querySelector('h1');
+                  if (h1) h1.style.display = 'block'; 
+                }} 
+              />
               <h1 className="text-3xl font-black text-tascki-black tracking-tighter hidden">TASCKI</h1>
             </div>
             <p className="text-gray-500 text-sm leading-relaxed font-semibold">

@@ -29,10 +29,10 @@ const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   return (
-    <section className="py-24 relative bg-gray-50 border-y border-gray-200">
+    <section className="py-24 relative bg-gradient-to-b from-slate-50 to-white border-y border-slate-200/60">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-yellow-100 text-yellow-700 font-extrabold text-xs uppercase tracking-wider mb-4">
+          <div className="inline-block px-4 py-1.5 rounded-full bg-yellow-100 text-yellow-700 font-extrabold text-xs uppercase tracking-wider mb-4 font-mono">
             Help Center
           </div>
           <h2 className="text-4xl md:text-5xl font-black mb-4 text-gray-900 tracking-tight">Frequently Asked <span className="text-tascki-yellow">Questions</span></h2>
@@ -50,7 +50,7 @@ const FAQ = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.08 }}
-                className="bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-md hover:shadow-lg transition-all"
+                className="bg-white rounded-[2rem] border border-slate-200/60 overflow-hidden shadow-lg hover:shadow-xl hover:border-amber-400/30 transition-all duration-300"
               >
                 <button
                   className="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none cursor-pointer"
@@ -60,20 +60,20 @@ const FAQ = () => {
                   <div className="flex items-center gap-4">
                     {/* The Traffic Light Indicator */}
                     <div 
-                      className={`w-3.5 h-3.5 rounded-full border border-black/10 transition-all duration-300 shrink-0 ${
+                      className={`w-3 h-3 rounded-full border border-slate-950/10 transition-all duration-300 shrink-0 ${
                         isOpen 
-                          ? 'bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.7)]' 
-                          : 'bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.7)]'
+                          ? 'bg-green-500 shadow-[0_0_8px_#22c55e]' 
+                          : 'bg-red-500 shadow-[0_0_8px_#ef4444]'
                       }`} 
                       title={isOpen ? 'Open (Go)' : 'Closed (Stop)'}
                     />
-                    <span className="font-extrabold text-lg text-gray-900 tracking-wide">{faq.question}</span>
+                    <span className="font-extrabold text-base md:text-lg text-slate-900 tracking-wide">{faq.question}</span>
                   </div>
                   
-                  <div className={`p-2 rounded-full transition-colors ${isOpen ? 'bg-tascki-yellow text-black' : 'bg-gray-50 text-gray-400'}`}>
+                  <div className={`p-2 rounded-full transition-colors ${isOpen ? 'bg-tascki-yellow text-slate-950' : 'bg-slate-50 text-slate-450 border border-slate-200/50'}`}>
                     <ChevronDown 
                       className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} 
-                      size={20} 
+                      size={18} 
                     />
                   </div>
                 </button>
@@ -86,7 +86,7 @@ const FAQ = () => {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="px-6 pb-6 text-gray-500 font-semibold border-t border-gray-100 pt-4 leading-relaxed text-sm ml-7">
+                      <div className="px-6 pb-6 text-gray-500 font-semibold border-t border-slate-100 pt-4 leading-relaxed text-sm ml-0 sm:ml-7">
                         {faq.answer}
                       </div>
                     </motion.div>

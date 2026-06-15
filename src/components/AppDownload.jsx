@@ -108,15 +108,15 @@ const AppDownload = () => {
                     >
                       <div className="space-y-6">
                         <div className="flex justify-between items-center mt-2">
-                          <h3 className="text-xl font-black text-white uppercase tracking-wider">Where to?</h3>
-                          <div className="w-8 h-8 rounded-full bg-tascki-yellow text-black flex items-center justify-center font-bold text-xs">
+                          <h3 className="text-lg font-black text-white uppercase tracking-wider">Where to?</h3>
+                          <div className="w-8 h-8 rounded-full bg-tascki-yellow text-slate-950 flex items-center justify-center font-black text-xs shadow-md border border-amber-400/20">
                             ME
                           </div>
                         </div>
                         
-                        <div className="bg-white/5 rounded-2xl p-3 border border-white/5 shadow-inner flex items-center gap-3">
+                        <div className="bg-slate-900/50 backdrop-blur-md rounded-2xl p-3 border border-white/10 shadow-inner flex items-center gap-3">
                           <Search className="w-4 h-4 text-tascki-yellow" />
-                          <span className="text-gray-400 font-bold text-xs uppercase tracking-wide">Enter destination...</span>
+                          <span className="text-slate-400 font-bold text-xs uppercase tracking-wider">Enter destination...</span>
                         </div>
                       </div>
 
@@ -125,13 +125,13 @@ const AppDownload = () => {
                           { title: 'Airport Terminal 2', desc: '4.2 km away' },
                           { title: 'Corporate Tech Park', desc: '8.5 km away' }
                         ].map((loc, i) => (
-                          <div key={i} className="flex items-center gap-3 bg-white/5 p-3 rounded-xl border border-white/5">
-                            <div className="w-7 h-7 rounded-lg bg-tascki-yellow/10 flex items-center justify-center text-tascki-yellow">
-                              <Navigation className="w-4 h-4 stroke-[2.5]" />
+                          <div key={i} className="flex items-center gap-3 bg-slate-900/40 p-3.5 rounded-[1.5rem] border border-white/5 shadow-sm">
+                            <div className="w-7 h-7 rounded-lg bg-tascki-yellow/15 flex items-center justify-center text-tascki-yellow border border-yellow-400/10">
+                              <Navigation className="w-3.5 h-3.5 stroke-[2.5]" />
                             </div>
                             <div>
                               <p className="text-xs font-black text-white">{loc.title}</p>
-                              <p className="text-[10px] text-gray-500 font-bold uppercase">{loc.desc}</p>
+                              <p className="text-[9px] text-slate-400 font-extrabold uppercase tracking-wider mt-0.5 font-mono">{loc.desc}</p>
                             </div>
                           </div>
                         ))}
@@ -153,14 +153,14 @@ const AppDownload = () => {
                       <div className="relative flex items-center justify-center w-36 h-36">
                         <span className="absolute inline-flex h-full w-full rounded-full bg-tascki-yellow/10 animate-ping" />
                         <span className="absolute inline-flex h-2/3 w-2/3 rounded-full bg-tascki-yellow/20 animate-pulse" />
-                        <div className="w-16 h-16 rounded-full bg-tascki-yellow text-black flex items-center justify-center shadow-lg relative z-10 border-2 border-black">
+                        <div className="w-16 h-16 rounded-full bg-tascki-yellow text-slate-950 flex items-center justify-center shadow-lg relative z-10 border-2 border-slate-950 shadow-[0_0_20px_rgba(255,192,0,0.5)]">
                           <Car size={26} className="stroke-[2.5] animate-bounce" />
                         </div>
                       </div>
                       
                       <div className="text-center space-y-1">
                         <p className="text-sm font-black text-white uppercase tracking-wider">Finding Drivers</p>
-                        <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest font-mono">Matching nearest ride...</p>
+                        <p className="text-[9px] text-slate-400 font-extrabold uppercase tracking-widest font-mono">Matching nearest ride...</p>
                       </div>
                     </motion.div>
                   )}
@@ -181,22 +181,22 @@ const AppDownload = () => {
                         </div>
                         <div className="space-y-1">
                           <h4 className="text-lg font-black text-white uppercase tracking-wider">Match Confirmed!</h4>
-                          <p className="text-[10px] text-green-400 font-bold uppercase tracking-widest">Driver is heading to you</p>
+                          <p className="text-[10px] text-green-400 font-bold uppercase tracking-widest font-mono">Driver is heading to you</p>
                         </div>
                       </div>
 
                       {/* Driver Card overlay */}
-                      <div className="bg-white/5 border border-white/10 p-3.5 rounded-2xl space-y-3 shadow-xl">
+                      <div className="bg-slate-900/50 border border-white/10 p-3.5 rounded-[1.5rem] space-y-3 shadow-2xl backdrop-blur-md">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-full bg-tascki-yellow text-black flex items-center justify-center shrink-0 border border-black font-black text-xs">
+                          <div className="w-10 h-10 rounded-full bg-tascki-yellow text-slate-950 flex items-center justify-center shrink-0 border border-slate-950 shadow-md font-black text-xs">
                             RK
                           </div>
                           <div>
-                            <p className="text-xs font-black text-white">Raj Kumar</p>
-                            <p className="text-[10px] text-tascki-yellow font-bold uppercase">Auto Rickshaw • MH-12</p>
+                            <p className="text-xs font-black text-white uppercase">Raj Kumar</p>
+                            <p className="text-[9px] text-tascki-yellow font-extrabold uppercase tracking-widest font-mono">Auto Rickshaw • MH-12</p>
                           </div>
                         </div>
-                        <div className="flex justify-between items-center text-[10px] font-bold text-gray-400 font-mono border-t border-white/5 pt-2.5">
+                        <div className="flex justify-between items-center text-[9px] font-bold text-slate-400 font-mono border-t border-white/5 pt-2.5">
                           <span>ETA: 3 MINS</span>
                           <span>FARE: ₹134.00</span>
                         </div>

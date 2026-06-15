@@ -31,13 +31,13 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-24 relative overflow-hidden bg-white border-t border-gray-100">
+    <section className="py-24 relative overflow-hidden bg-gradient-to-b from-white to-slate-50 border-t border-slate-200/60">
       {/* City skyline wireframe silhouette background */}
       <div className="absolute inset-0 opacity-[0.015] bg-[radial-gradient(#000_1.5px,transparent_1.5px)] bg-[size:16px_16px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-yellow-100 text-yellow-700 font-extrabold text-xs uppercase tracking-wider mb-4">
+          <div className="inline-block px-4 py-1.5 rounded-full bg-yellow-100 text-yellow-700 font-extrabold text-xs uppercase tracking-wider mb-4 font-mono">
             Testimonials
           </div>
           <h2 className="text-4xl md:text-5xl font-black mb-4 text-gray-900 tracking-tight">Loved by <span className="text-tascki-yellow">Thousands</span></h2>
@@ -59,7 +59,7 @@ const Testimonials = () => {
                 boxShadow: '0 20px 40px rgba(255,192,0,0.12)',
                 borderColor: 'rgba(255,192,0,0.3)'
               }}
-              className="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-lg relative flex flex-col justify-between cursor-pointer transition-all duration-300"
+              className="bg-white p-8 rounded-[2.5rem] border border-slate-200/60 shadow-lg relative flex flex-col justify-between cursor-pointer transition-all duration-300"
             >
               {/* Backseat review window frame design */}
               <div className="absolute top-6 right-6 text-tascki-yellow/20">
@@ -78,11 +78,11 @@ const Testimonials = () => {
                 </p>
               </div>
 
-              <div className="flex items-center gap-4 mt-auto border-t border-gray-50 pt-4">
-                <img src={testi.img} alt={testi.name} className="w-14 h-14 rounded-full object-cover border-4 border-yellow-50 shadow-md shrink-0" />
+              <div className="flex items-center gap-4 mt-auto border-t border-slate-100 pt-4">
+                <img src={testi.img} alt={testi.name} className="w-14 h-14 rounded-full object-cover border-4 border-yellow-100 shadow-md shrink-0" />
                 <div>
-                  <h4 className="font-extrabold text-gray-900 text-base">{testi.name}</h4>
-                  <p className="text-xs text-gray-400 font-extrabold uppercase tracking-wider">{testi.role}</p>
+                  <h4 className="font-black text-slate-950 text-base">{testi.name}</h4>
+                  <p className="text-xs text-slate-400 font-extrabold uppercase tracking-widest font-mono">{testi.role}</p>
                 </div>
               </div>
             </motion.div>

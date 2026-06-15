@@ -34,7 +34,7 @@ const MiniCarAnimation = () => {
 
 const RideHistory = () => {
   return (
-    <section className="py-24 relative overflow-hidden bg-white">
+    <section className="py-24 relative overflow-hidden bg-gradient-to-b from-white to-slate-50">
       {/* Background radial glow */}
       <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-tascki-yellow/5 blur-[120px] rounded-full pointer-events-none -translate-y-1/2" />
 
@@ -49,7 +49,7 @@ const RideHistory = () => {
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-yellow-100 text-yellow-700 text-xs font-black uppercase tracking-wider rounded-full">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-yellow-100 text-yellow-700 text-xs font-black uppercase tracking-wider rounded-full font-mono">
               Trip History
             </div>
             
@@ -74,28 +74,28 @@ const RideHistory = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-gray-50 rounded-[2.5rem] p-6 border border-gray-100 shadow-xl relative"
+            className="bg-white rounded-[2.5rem] p-6 border border-slate-200/60 shadow-2xl relative"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-tascki-yellow/10 blur-[40px] rounded-full pointer-events-none" />
             
-            <div className="flex items-center gap-3 mb-6 border-b border-gray-200/50 pb-4">
-              <div className="bg-tascki-yellow p-2 rounded-xl text-black">
+            <div className="flex items-center gap-3 mb-6 border-b border-slate-100 pb-4">
+              <div className="bg-tascki-yellow p-3 rounded-2xl text-slate-950 border border-amber-400/20 shadow-md">
                 <History className="stroke-[2.5]" size={20} />
               </div>
-              <h3 className="text-xl font-black text-gray-900 uppercase tracking-wide">Recent Rides</h3>
+              <h3 className="text-xl font-black text-slate-950 uppercase tracking-wide">Recent Rides</h3>
             </div>
             
             <div className="space-y-4 relative z-10">
               {rides.map((ride) => (
-                <div key={ride.id} className="bg-white rounded-2xl p-5 border border-gray-100 shadow-md hover:shadow-lg hover:border-yellow-100 transition-all">
-                  <div className="flex justify-between items-start mb-4 border-b border-gray-50 pb-3">
+                <div key={ride.id} className="bg-white rounded-[2rem] p-5 border border-slate-200/60 shadow-lg hover:shadow-2xl hover:border-amber-400/40 transition-all duration-300">
+                  <div className="flex justify-between items-start mb-4 border-b border-slate-50 pb-3">
                     <div>
-                      <p className="text-[10px] text-gray-400 font-extrabold uppercase tracking-wider mb-1 font-mono">{ride.date}</p>
-                      <p className="font-black text-black text-lg uppercase tracking-wide">{ride.vehicle}</p>
+                      <p className="text-[9px] text-slate-400 font-extrabold uppercase tracking-wider mb-1.5 font-mono">{ride.date}</p>
+                      <p className="font-black text-slate-950 text-lg uppercase tracking-wide">{ride.vehicle}</p>
                     </div>
                     <div className="text-right">
-                      <p className="font-black text-black text-xl font-mono">{ride.fare}</p>
-                      <div className="flex items-center gap-1 justify-end mt-1">
+                      <p className="font-black text-slate-950 text-xl font-mono leading-none">{ride.fare}</p>
+                      <div className="flex items-center gap-1 justify-end mt-1.5">
                         {[...Array(5)].map((_, i) => (
                           <Star key={i} size={11} className={i < ride.rating ? "fill-tascki-yellow text-tascki-yellow" : "fill-gray-200 text-gray-200"} />
                         ))}
@@ -104,17 +104,17 @@ const RideHistory = () => {
                   </div>
                   
                   {/* Detailed Route with animate-on-scroll mini taxi */}
-                  <div className="flex items-center justify-between text-xs font-bold bg-gray-50/50 p-3 rounded-xl border border-gray-100">
+                  <div className="flex items-center justify-between text-xs font-bold bg-slate-50/50 p-3 rounded-2xl border border-slate-200/50">
                     <div className="flex-1 truncate text-left pr-2">
-                      <p className="text-[8px] text-gray-400 font-extrabold uppercase">Pickup</p>
-                      <p className="text-gray-900 font-extrabold truncate">{ride.from}</p>
+                      <p className="text-[8px] text-slate-450 font-extrabold uppercase font-mono mb-0.5">Pickup</p>
+                      <p className="text-slate-900 font-black truncate">{ride.from}</p>
                     </div>
                     
                     <MiniCarAnimation />
                     
                     <div className="flex-1 truncate text-right pl-2">
-                      <p className="text-[8px] text-gray-400 font-extrabold uppercase">Dropoff</p>
-                      <p className="text-gray-900 font-extrabold truncate">{ride.to}</p>
+                      <p className="text-[8px] text-slate-450 font-extrabold uppercase font-mono mb-0.5">Dropoff</p>
+                      <p className="text-slate-900 font-black truncate">{ride.to}</p>
                     </div>
                   </div>
                 </div>

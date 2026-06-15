@@ -99,12 +99,13 @@ const Navbar = () => {
         >
           <div className="relative">
             <img 
-              src="/tascki logo.png" 
+              src="/tascki%20logo.png" 
               alt="TASCKI Logo" 
               className={`w-auto transition-all duration-500 ${scrolled ? 'h-8' : 'h-10'}`} 
               onError={(e) => { 
                 e.target.style.display = 'none'; 
-                if (e.target.nextSibling) e.target.nextSibling.style.display = 'block'; 
+                const h1 = e.target.closest('a')?.querySelector('h1');
+                if (h1) h1.style.display = 'block';
               }} 
             />
             {/* Decorative logo pulse glow */}
